@@ -15,3 +15,30 @@
     text-align: center;
     cursor: pointer;
 }
+
+/* .bar-container{
+    display: absolute;
+    
+    margin-top: 5rem;
+    background-color: white;
+}
+
+.array-bar{
+    width: 4px;
+    height: 10rem;
+    display: inline-block;
+    background-color: black;
+    margin: 0 3px;
+}
+
+.array-bar.compared{
+    background-color: rgb(228, 193, 95);
+}
+
+.array-bar.sorted{
+    background-color: rgb(46, 107, 46);
+}
+
+.array-bar.swapping{
+    background-color: rgb(206, 95, 233);
+} */
