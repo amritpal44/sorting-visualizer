@@ -1,1 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* write your css here */
+.container{
+    
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100vw;
+
+}

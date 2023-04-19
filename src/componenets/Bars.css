@@ -1,0 +1,15 @@
+.bar-container{
+    display: absolute;
+    /* margin: 0 auto; */
+    /* margin-left: 100px; */
+    margin-top: 5rem;
+    background-color: white;
+}
+
+.array-bar{
+    width: 4px;
+    height: 10rem;
+    display: inline-block;
+    background-color: black;
+    margin: 0 3px;
+}

@@ -1,0 +1,17 @@
+.btn-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1rem;
+    gap: 5px;
+}
+
+.btn{
+    border: 1px solid rgb(252, 252, 252);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.952);
+    padding: 2.5px 8px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
