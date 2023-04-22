@@ -1,38 +1,14 @@
 import './SortingVisualizer.css';
 
-import {useState} from "react";
-import { useEffect } from "react";
 import Bars from "./Bars";
 
-import Buttons from './Buttons';
 
 
-function SortingVisualizer(){
-
-    const[array, setArray] = useState([]);
+function SortingVisualizer(props){
 
     
-    useEffect(() => {
-        resetArray();
-    },[])
-
-    useEffect(() =>{
-        console.log(array);
-    }, [array])
-
-    function resetArray(){
-        const tempArr = [];
-        for(let i = 0; i < 10; i++){
-            tempArr.push(randomInt(5,500));
-        }
-        
-        
-        setArray(tempArr);
-    }
-
-    function randomInt(min, max){
-        return Math.floor(Math.random()*(max - min + 1) + min);
-    }
+    let array = props.array;  
+    let setArray = props.setArray;
 
     function delay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -63,7 +39,7 @@ function SortingVisualizer(){
 
                 arrayBars[j].classList.add("compared");
                 arrayBars[j + 1].classList.add("compared");
-                await delay(400);
+                await delay(300);
                 arrayBars[j].classList.remove("compared");
                 arrayBars[j + 1].classList.remove("compared");
 
@@ -74,7 +50,7 @@ function SortingVisualizer(){
                     //swapping is done here
                     arrayBars[j].classList.add("swapping");
                     arrayBars[j + 1].classList.add("swapping");
-                    await delay(500);
+                    await delay(200);
 
                     [tempArr[j], tempArr[j+1]] = [tempArr[j+1], tempArr[j]];
 
@@ -84,7 +60,7 @@ function SortingVisualizer(){
                     
                     console.log(array);
 
-                    await delay(500);
+                    await delay(200);
                     arrayBars[j].classList.remove("swapping");
                     arrayBars[j + 1].classList.remove("swapping");
                 }
@@ -98,19 +74,11 @@ function SortingVisualizer(){
 
     }
 
-    function mergeSort(){    }    function quickSort(){    }
-
-
     return(
         <div>
             <Bars value = {array}></Bars>
-            
-             <Buttons value = {array}/>
              <div className="btn-container">
-                <button className="btn" onClick={() => resetArray()}>Generate new Array</button>
                 <button className='btn' onClick={() => bubbleSort()}>Bubble Sort</button>
-                <button className='btn' onClick={() => mergeSort()}>Merge Sort</button>
-                <button className='btn' onClick={() => quickSort()}>Quick Sort</button>
              </div>
         </div>     
         
