@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Algorithms from "./Algorithms";
 import './TopBar.css';
 
 
@@ -12,7 +11,6 @@ function TopBar(props){
     useEffect(() => {
         resetArray();
     },[])
-
 
     function arrSizeHandler(e){
         console.log(e.target.value);
@@ -28,9 +26,9 @@ function TopBar(props){
 
     function resetArray(){
         const tempArr = [];
-        console.log(`arrsize resetarray: ${arrSize}`);
+        // console.log(`arrsize resetarray: ${arrSize}`);
         for(let i = 0; i < arrSize; i++){
-            tempArr.push(randomInt(5,500));
+            tempArr.push(randomInt(10,99));
         }
 
         setArray(tempArr);
@@ -43,14 +41,15 @@ function TopBar(props){
 
     return(
         <div className="nav-container">
-            <h1>Sorting Visualizer</h1>
+            <h1 className="nav-heading">Sorting Visualizer</h1>
 
-            {/* <Algorithms/> */}
+            <div className="nav-filters">
+                <input type="range" min={10} max={50} onClick={arrSizeHandler} defaultValue={arrSize} className="nav-input"></input>
+                <span className="nav-input-value">{arrSize}</span>
 
-            <input type="range" min={10} max={50} onClick={arrSizeHandler} defaultValue={arrSize}></input>
-            <span>{arrSize}</span>
-
-            <button className="btn" onClick={() => resetArray()}>RANDOMIZE</button>
+                <button className="nav-btn" onClick={() => resetArray()}>RANDOMIZE</button>
+            </div>
+            
         </div>
     )
 }

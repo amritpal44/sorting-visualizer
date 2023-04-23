@@ -11,15 +11,12 @@ function App() {
   // console.log(`arrsize in appjs: ${arrSize}`);
 
   return (
-    <div className="container">
+    <div className="wrapper">
       
       <TopBar setArray={setArray} />
+ 
+      <SortingVisualizer array={array} setArray={setArray}/>
 
-      <main>
-        <SortingVisualizer array={array} setArray={setArray}/>
-
-      </main>
-      
       <Footer />
     
     </div>
