@@ -1,7 +1,13 @@
+import {toast} from "react-toastify";
+
+
 function InsertionSort(props){
 
     let array = props.array;
     let setArray = props.setArray;
+
+    let busy = props.busy;
+    let setBusy = props.setBusy;
 
     function delay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -64,11 +70,24 @@ function InsertionSort(props){
             arrayBars[i].classList.add('sorted');
         }
         
+        setBusy(false);
+        toast.success("Insertion Sort Completed.")
     }
 
     return(
         <div>
-            <button className="btn" onClick={insertionsort}>Insertion Sort</button>
+            <button className="btn" onClick={() =>{
+                
+                if(busy === true){
+                    toast.warning("Sorting in progress. Try again after sorting gets completed.")
+                    return;
+                }
+                else{
+                    setBusy(true);
+                    insertionsort();  
+                }
+                
+            }}>Insertion Sort</button>
         </div>
     )
 }

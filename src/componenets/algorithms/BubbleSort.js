@@ -1,8 +1,13 @@
-
+import {toast} from "react-toastify";
 
 function BubbleSort(props){
     let array = props.array;
     let setArray = props.setArray;
+
+    let busy = props.busy;
+    let setBusy = props.setBusy;
+
+
 
     function delay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -61,12 +66,27 @@ function BubbleSort(props){
         }
         arrayBars[0].classList.add('sorted');
 
+            
+        setBusy(false);
+        toast.success("Bubble Sort Completed.")
+
     }
 
 
     return(
         <div>
-            <button className="btn" onClick={bubbleSort}>Bubble Sort</button>
+            <button className="btn" onClick={() =>{
+                
+                if(busy === true){
+                    toast.warning("Sorting in progress. Try again after sorting gets completed.")
+                    return;
+                }
+                else{
+                    setBusy(true);
+                    bubbleSort();  
+                }
+                
+            }}>Bubble Sort</button>
         </div>
     )
 }

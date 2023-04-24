@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react";
 import './TopBar.css';
+import { toast } from "react-toastify";
 
 
 function TopBar(props){
 
-    const[arrSize, setArrSize] = useState(20);
+    const[arrSize, setArrSize] = useState(10);
     // let arrSize = 20;
+    let array = props.array;
     let setArray = props.setArray;
+
+    let busy = props.busy;
+    
+    let speed = props.speed;
+    let setSpeed = props.setSpeed;
+    
 
     useEffect(() => {
         resetArray();
@@ -23,8 +31,21 @@ function TopBar(props){
         //agar samaj na aee to uncomment karke check kar lena
     }
 
+    function speedHandler(e){
+        console.log(`Speed is: ${e.target.value}`);
+        setSpeed(e.target.value)
+    }
 
     function resetArray(){
+
+        const n = array.length;
+  
+        let arrayBars = document.getElementsByClassName("array-bar");
+    
+        for (let i = 0; i < n; i++) {
+            arrayBars[i].classList.remove("sorted");
+        }
+
         const tempArr = [];
         // console.log(`arrsize resetarray: ${arrSize}`);
         for(let i = 0; i < arrSize; i++){
@@ -44,14 +65,25 @@ function TopBar(props){
             <h1 className="nav-heading">Sorting Visualizer</h1>
 
             <div className="nav-filters">
+                <input type="range" min={1} max={5} onClick={speedHandler} defaultValue={speed} className="nav-input"></input>
                 <input type="range" min={10} max={50} onClick={arrSizeHandler} defaultValue={arrSize} className="nav-input"></input>
                 <span className="nav-input-value">{arrSize}</span>
 
-                <button className="nav-btn" onClick={() => resetArray()}>RANDOMIZE</button>
+                <button className="nav-btn" onClick={() =>{
+                
+                if(busy === true){
+                    toast.warning("Sorting in progress. Try again after sorting gets completed.")
+                    return;
+                }
+                else{
+                    resetArray();  
+                }
+                
+            }}>Generate New Array</button>
             </div>
             
         </div>
     )
 }
 
-export default TopBar;
+export default TopBar;  
