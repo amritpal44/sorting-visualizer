@@ -10,7 +10,7 @@ function MergeSort(props) {
     let busy = props.busy;
     let setBusy = props.setBusy;
 
-    
+    let delay_time = props.delay_time;
 
   
     function delay(ms) {
@@ -40,7 +40,7 @@ function MergeSort(props) {
         arrayBars[leftIndex].classList.add("compared");
         arrayBars[rightIndex].classList.add("compared");
   
-        await delay(300);
+        await delay(delay_time*3);
   
         arrayBars[leftIndex].classList.remove("compared");
         arrayBars[rightIndex].classList.remove("compared");
@@ -69,12 +69,12 @@ function MergeSort(props) {
   
         arrayBars[i].classList.add("swapping");
   
-        await delay(200);
+        await delay(delay_time*2);
   
         array[i] = tempArr[i - start];
         setArray(array.slice());
   
-        await delay(200);
+        await delay(delay_time*2);
   
         arrayBars[i].classList.remove("swapping");
         arrayBars[i].classList.add("sorted");
@@ -99,6 +99,12 @@ function MergeSort(props) {
       setBusy(false);
       toast.success("Merge Sort Completed.");
     }
+
+    function abbHandler(){
+      let abbContainer = document.getElementsByClassName('abb-container');
+      console.log(abbContainer);
+      abbContainer[0].classList.add("active");
+    }
   
     return (
       <div>
@@ -110,6 +116,7 @@ function MergeSort(props) {
                 }
                 else{
                     setBusy(true);
+                    abbHandler();
                     mergeSort();  
                 }
                 

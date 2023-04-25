@@ -9,7 +9,7 @@ function QuickSort(props){
     let busy = props.busy;
     let setBusy = props.setBusy;
 
-    
+    let delay_time = props.delay_time;
 
 
     function delay(ms) {
@@ -42,7 +42,7 @@ function QuickSort(props){
 
         for(let i = start; i < end; i++){
             arrayBars[i].classList.add("compared");
-            await delay(300);
+            await delay(delay_time*3);
 
             if(arr[i] < pivotValue){
 
@@ -51,7 +51,7 @@ function QuickSort(props){
                 arrayBars[i].classList.add("swapping");
                 arrayBars[pivotIndex].classList.add("swapping");
                 setArray(arr.slice());
-                await delay(200);
+                await delay(delay_time*2);
 
                 arrayBars[i].classList.remove("swapping");
                 arrayBars[pivotIndex].classList.remove("swapping");
@@ -67,7 +67,7 @@ function QuickSort(props){
         arrayBars[pivotIndex].classList.add("swapping");
         arrayBars[end].classList.add("swapping");
         setArray(arr.slice());
-        await delay(200);
+        await delay(delay_time*2);
 
         arrayBars[pivotIndex].classList.remove("swapping");
         arrayBars[end].classList.remove("swapping");
@@ -76,7 +76,7 @@ function QuickSort(props){
             if(i !== pivotIndex){
                 arrayBars[i].classList.add("compared");
             }
-            await delay(50);
+            await delay(delay_time/2);
             arrayBars[i].classList.remove("compared");
             if(i === pivotIndex){
                 arrayBars[i].classList.add("sorted");
@@ -102,6 +102,12 @@ function QuickSort(props){
         toast.success("Quick Sort Completed.")
     }
 
+    function abbHandler(){
+        let abbContainer = document.getElementsByClassName('abb-container');
+        console.log(abbContainer);
+        abbContainer[0].classList.add("active");
+    }
+
     return(
         <div>
             <button className="btn" onClick={() =>{
@@ -112,6 +118,7 @@ function QuickSort(props){
                 }
                 else{
                     setBusy(true);
+                    abbHandler();
                     sort();  
                 }
                 

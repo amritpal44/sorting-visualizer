@@ -10,7 +10,7 @@ function SelectionSort(props){
     let busy = props.busy;
     let setBusy = props.setBusy;
 
-    
+    let delay_time = props.delay_time;
 
 
     function delay(ms) {
@@ -42,19 +42,19 @@ function SelectionSort(props){
 
                 if(tempArr[j] < tempArr[min]){
 
-                    await delay(300);
+                    await delay(delay_time*3);
                     arrayBars[j].classList.remove("compared");
                     arrayBars[j].classList.add("swapping");
                     arrayBars[min].classList.remove("compared")
                         min = j;
                         check = true;
-                    await delay(300);
+                    await delay(delay_time*3);
                     arrayBars[min].classList.remove("swapping");
                     arrayBars[min].classList.add("compared");
                     
                 }
 
-                await delay(300);
+                await delay(delay_time*3);
                 if(check === false){
                     arrayBars[j].classList.remove("compared");
                 }
@@ -63,12 +63,12 @@ function SelectionSort(props){
             arrayBars[min].classList.remove("compared");
             arrayBars[min].classList.add("swapping");
             arrayBars[i].classList.add("swapping");
-            await delay(200);
+            await delay(delay_time*2);
 
                 [tempArr[i], tempArr[min]] = [tempArr[min], tempArr[i]];
                 setArray(tempArr.slice());
 
-            await delay(200);
+            await delay(delay_time*2);
             arrayBars[min].classList.remove("swapping");
             arrayBars[i].classList.remove("swapping");
             arrayBars[i].classList.add("sorted");
@@ -76,6 +76,12 @@ function SelectionSort(props){
 
         setBusy(false);
         toast.success("Selection Sort Completed.")
+    }
+
+    function abbHandler(){
+        let abbContainer = document.getElementsByClassName('abb-container');
+        console.log(abbContainer);
+        abbContainer[0].classList.add("active");
     }
 
 
@@ -89,6 +95,7 @@ function SelectionSort(props){
                 }
                 else{
                     setBusy(true);
+                    abbHandler();
                     selectionsort();  
                 }
                 

@@ -10,7 +10,7 @@ function App() {
 
   const[array, setArray] = useState([]);
   const[busy, setBusy] = useState(false);
-  const[speed, setSpeed] = useState(2);
+  const[speed, setSpeed] = useState(5);
 
   // console.log(`arrsize in appjs: ${arrSize}`);
 
@@ -19,7 +19,7 @@ function App() {
       
       <TopBar array={array} setArray={setArray} busy={busy} setBusy={setBusy} speed={speed} setSpeed={setSpeed} />
  
-      <SortingVisualizer array={array} setArray={setArray} busy={busy} setBusy={setBusy} speed={speed} setSpeed={setSpeed} />
+      <SortingVisualizer array={array} setArray={setArray} busy={busy} setBusy={setBusy} speed={speed} />
 
       <Footer />
     

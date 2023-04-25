@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 function TopBar(props){
 
-    const[arrSize, setArrSize] = useState(10);
+    const[arrSize, setArrSize] = useState(25);
     // let arrSize = 20;
     let array = props.array;
     let setArray = props.setArray;
@@ -32,7 +32,7 @@ function TopBar(props){
     }
 
     function speedHandler(e){
-        console.log(`Speed is: ${e.target.value}`);
+        // console.log(`Speed is: ${e.target.value}`);
         setSpeed(e.target.value)
     }
 
@@ -65,7 +65,10 @@ function TopBar(props){
             <h1 className="nav-heading">Sorting Visualizer</h1>
 
             <div className="nav-filters">
+                <label>Speed:</label>
                 <input type="range" min={1} max={5} onClick={speedHandler} defaultValue={speed} className="nav-input"></input>
+
+                <label> Array size:</label>
                 <input type="range" min={10} max={50} onClick={arrSizeHandler} defaultValue={arrSize} className="nav-input"></input>
                 <span className="nav-input-value">{arrSize}</span>
 

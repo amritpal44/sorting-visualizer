@@ -9,6 +9,8 @@ function InsertionSort(props){
     let busy = props.busy;
     let setBusy = props.setBusy;
 
+    let delay_time = props.delay_time;
+
     function delay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
@@ -31,7 +33,7 @@ function InsertionSort(props){
             let check = false;
 
             arrayBars[i].classList.add("compared");
-            await delay(900);
+            await delay(delay_time*4);
             check = true;
             arrayBars[i].classList.remove("compared");
 
@@ -39,18 +41,18 @@ function InsertionSort(props){
             {
                 if(check === false){
                     arrayBars[j+1].classList.add("compared");
-                    await delay(900);
+                    await delay(delay_time*4);
                     arrayBars[j+1].classList.remove("compared");
                 }
 
                 arrayBars[j].classList.add("swapping");
-                await delay(200);
+                await delay(delay_time*2);
                 arrayBars[j+1].classList.add("swapping");
-                await delay(100);
+                await delay(delay_time*2);
                     tempArr[j+1] = tempArr[j];
                     setArray(tempArr.slice());
                     
-                await delay(200);
+                await delay(delay_time*2);
                 arrayBars[j].classList.remove("swapping");
                 arrayBars[j+1].classList.remove("swapping");
 
@@ -59,10 +61,10 @@ function InsertionSort(props){
 
 
             arrayBars[j+1].classList.add("overwrite");
-            await delay(400);
+            await delay(delay_time*3);
                 tempArr[j+1] = key;
                 setArray(tempArr.slice());
-            await delay(500);
+            await delay(delay_time*3);
             arrayBars[j+1].classList.remove("overwrite");
         }
 
@@ -72,6 +74,12 @@ function InsertionSort(props){
         
         setBusy(false);
         toast.success("Insertion Sort Completed.")
+    }
+
+    function abbHandler(){
+        let abbContainer = document.getElementsByClassName('abb-container');
+        console.log(abbContainer);
+        abbContainer[0].classList.add("active");
     }
 
     return(
@@ -84,6 +92,7 @@ function InsertionSort(props){
                 }
                 else{
                     setBusy(true);
+                    abbHandler();
                     insertionsort();  
                 }
                 

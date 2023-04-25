@@ -7,7 +7,7 @@ function BubbleSort(props){
     let busy = props.busy;
     let setBusy = props.setBusy;
 
-
+    let delay_time = props.delay_time;
 
     function delay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -33,7 +33,8 @@ function BubbleSort(props){
                 
                 arrayBars[j].classList.add("compared");
                 arrayBars[j + 1].classList.add("compared");
-                await delay(300);
+                console.log(`in bubble sort delay time: ${delay_time}`)
+                await delay(delay_time*3);
                 arrayBars[j].classList.remove("compared");
                 arrayBars[j + 1].classList.remove("compared");
 
@@ -44,7 +45,7 @@ function BubbleSort(props){
                     //swapping is done here
                     arrayBars[j].classList.add("swapping");
                     arrayBars[j + 1].classList.add("swapping");
-                    await delay(200);
+                    await delay(delay_time*2);
 
                     [tempArr[j], tempArr[j+1]] = [tempArr[j+1], tempArr[j]];
 
@@ -54,7 +55,7 @@ function BubbleSort(props){
                     
                     console.log(array);
 
-                    await delay(200);
+                    await delay(delay_time*2);
                     arrayBars[j].classList.remove("swapping");
                     arrayBars[j + 1].classList.remove("swapping");
                 }
@@ -72,6 +73,11 @@ function BubbleSort(props){
 
     }
 
+    function abbHandler(){
+        let abbContainer = document.getElementsByClassName('abb-container');
+        console.log(abbContainer);
+        abbContainer[0].classList.add("active");
+    }
 
     return(
         <div>
@@ -83,6 +89,7 @@ function BubbleSort(props){
                 }
                 else{
                     setBusy(true);
+                    abbHandler();
                     bubbleSort();  
                 }
                 
