@@ -2,7 +2,7 @@
 
 import './Algorithms.css'
 
-import BubbleSort, {BubbleSortDesc} from "./algorithms/BubbleSort";
+import BubbleSort from "./algorithms/BubbleSort";
 import InsertionSort from './algorithms/InsertionSort';
 import MergeSort from './algorithms/MergeSort';
 import SelectionSort from './algorithms/SelectionSort';
