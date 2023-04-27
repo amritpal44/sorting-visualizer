@@ -1,4 +1,5 @@
 import {toast} from "react-toastify";
+import {data} from "../../data";
 
 
 
@@ -12,6 +13,7 @@ function SelectionSort(props){
 
     let delay_time = props.delay_time;
 
+    let setCategory = props.setCategory;
 
     function delay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -84,6 +86,9 @@ function SelectionSort(props){
         abbContainer[0].classList.add("active");
     }
 
+    function categoryHandler(){
+        setCategory(data[3].title);
+    }
 
     return(
         <div>
@@ -97,6 +102,7 @@ function SelectionSort(props){
                     setBusy(true);
                     abbHandler();
                     selectionsort();  
+                    categoryHandler();
                 }
                 
             }} className="btn">Selection Sort</button>

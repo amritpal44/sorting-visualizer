@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 
 import './Algorithms.css'
 
-import BubbleSort from "./algorithms/BubbleSort";
+import BubbleSort, {BubbleSortDesc} from "./algorithms/BubbleSort";
 import InsertionSort from './algorithms/InsertionSort';
 import MergeSort from './algorithms/MergeSort';
 import SelectionSort from './algorithms/SelectionSort';
@@ -18,6 +19,8 @@ function Algorithms(props){
     let setBusy = props.setBusy;
 
     let speed = props.speed;
+
+    let setCategory = props.setCategory;
 
     const[delay_time, setDelayTime] = useState(100);
     
@@ -36,23 +39,26 @@ function Algorithms(props){
                     break;
             case 4: speed=1000;
                     break;
-            case 5: speed=10000;
+            case 5: speed=5000;
                     break;
             default: speed=100;
                     break;
         }
         
-        setDelayTime( 10000/(Math.floor(array.length/10)*speed) ); 
+        setDelayTime( 10000/(Math.floor(20/10)*speed) ); 
+        // console.log(`array length: ${array.length}`);
+        // console.log(`speed value: ${speed}`);
+        // console.log(`delay time formula value: ${(Math.floor(array.length/10)*speed)}`);
         console.log("speed:", speed, "delay_time:", delay_time);
     }
 
     return(
         <div className="btn-container">
-            <BubbleSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time}/>
-            <InsertionSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time}/>
-            <SelectionSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time}/>
-            <MergeSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time}/>
-            <QuickSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time}/>
+            <BubbleSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time} setCategory={setCategory}/>
+            <InsertionSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time} setCategory={setCategory}/>
+            <SelectionSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time} setCategory={setCategory}/>
+            <MergeSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time} setCategory={setCategory}/>
+            <QuickSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time} setCategory={setCategory}/>
         </div>
     )
 }

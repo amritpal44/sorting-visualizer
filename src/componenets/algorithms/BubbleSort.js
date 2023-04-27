@@ -1,4 +1,8 @@
 import {toast} from "react-toastify";
+import {data} from "../../data";
+
+
+
 
 function BubbleSort(props){
     let array = props.array;
@@ -8,6 +12,8 @@ function BubbleSort(props){
     let setBusy = props.setBusy;
 
     let delay_time = props.delay_time;
+
+    let setCategory = props.setCategory;
 
     function delay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -79,18 +85,23 @@ function BubbleSort(props){
         abbContainer[0].classList.add("active");
     }
 
+    function categoryHandler(){
+      setCategory(data[1].title);
+    }
+
     return(
         <div>
             <button className="btn" onClick={() =>{
                 
                 if(busy === true){
-                    toast.warning("Sorting in progress. Try again after sorting gets completed.")
+                    toast.warning("Sorting in progress. Try again after sorting gets completed.");
                     return;
                 }
                 else{
                     setBusy(true);
                     abbHandler();
                     bubbleSort();  
+                    categoryHandler();
                 }
                 
             }}>Bubble Sort</button>

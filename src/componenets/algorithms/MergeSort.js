@@ -1,4 +1,5 @@
 import {toast} from "react-toastify";
+import {data} from "../../data";
 
 
 
@@ -11,6 +12,8 @@ function MergeSort(props) {
     let setBusy = props.setBusy;
 
     let delay_time = props.delay_time;
+
+    let setCategory = props.setCategory;
 
   
     function delay(ms) {
@@ -105,6 +108,10 @@ function MergeSort(props) {
       console.log(abbContainer);
       abbContainer[0].classList.add("active");
     }
+
+    function categoryHandler(){
+      setCategory(data[4].title);
+    }
   
     return (
       <div>
@@ -118,6 +125,7 @@ function MergeSort(props) {
                     setBusy(true);
                     abbHandler();
                     mergeSort();  
+                    categoryHandler();
                 }
                 
             }}>

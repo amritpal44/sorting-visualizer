@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect } from "react";
 import './TopBar.css';
 import { toast } from "react-toastify";
 
 
 function TopBar(props){
 
-    const[arrSize, setArrSize] = useState(25);
+    
     // let arrSize = 20;
     let array = props.array;
     let setArray = props.setArray;
@@ -14,7 +15,10 @@ function TopBar(props){
     
     let speed = props.speed;
     let setSpeed = props.setSpeed;
-    
+
+    let arrSize = props.arrSize;
+    let setArrSize = props.setArrSize;
+        
 
     useEffect(() => {
         resetArray();

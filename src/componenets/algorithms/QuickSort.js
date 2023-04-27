@@ -1,4 +1,5 @@
 import {toast} from "react-toastify";
+import {data} from "../../data";
 
 
 
@@ -10,6 +11,8 @@ function QuickSort(props){
     let setBusy = props.setBusy;
 
     let delay_time = props.delay_time;
+
+    let setCategory = props.setCategory;
 
 
     function delay(ms) {
@@ -108,6 +111,10 @@ function QuickSort(props){
         abbContainer[0].classList.add("active");
     }
 
+    function categoryHandler(){
+        setCategory(data[5].title);
+      }
+
     return(
         <div>
             <button className="btn" onClick={() =>{
@@ -120,6 +127,7 @@ function QuickSort(props){
                     setBusy(true);
                     abbHandler();
                     sort();  
+                    categoryHandler();
                 }
                 
             }}>Quick Sort</button>
