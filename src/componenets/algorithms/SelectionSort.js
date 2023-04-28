@@ -13,6 +13,7 @@ function SelectionSort(props){
 
     let delay_time = props.delay_time;
 
+    let category = props.category;
     let setCategory = props.setCategory;
 
     function delay(ms) {
@@ -92,7 +93,12 @@ function SelectionSort(props){
 
     return(
         <div>
-            <button onClick={() =>{
+            <button className={`btn ${category === data[3].title ? 
+                        "active" : 
+                        "deactive"
+                    }`} 
+                    
+                onClick={() =>{
                 
                 if(busy === true){
                     toast.warning("Sorting in progress. Try again after sorting gets completed.")
@@ -105,7 +111,7 @@ function SelectionSort(props){
                     categoryHandler();
                 }
                 
-            }} className="btn">Selection Sort</button>
+            }} >Selection Sort</button>
         </div>
     )
 }

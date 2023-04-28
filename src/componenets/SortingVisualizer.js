@@ -15,13 +15,20 @@ function SortingVisualizer(props){
     let busy = props.busy;
     let setBusy = props.setBusy;
 
+    let category = props.category;
     let setCategory = props.setCategory;
+
+    let arrSize = props.arrSize;
 
     return(
         <div className='main-container'>
-            <Abbreviation />
-            <Bars value = {array}></Bars>   
-            <Algorithms setArray={setArray} array={array} busy={busy} setBusy={setBusy} speed={props.speed} setCategory={setCategory}/>
+            <div className='main-bar-container'>
+                <Abbreviation />
+                <Bars value = {array} arrSize={arrSize}></Bars>  
+            </div>
+            <div className='main-btn-container'>
+                <Algorithms setArray={setArray} array={array} busy={busy} setBusy={setBusy} speed={props.speed} category={category} setCategory={setCategory}/>
+            </div>
         </div>     
     )
 }

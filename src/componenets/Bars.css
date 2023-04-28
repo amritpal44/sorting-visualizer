@@ -21,6 +21,10 @@
     margin: 0 6px;
 }
 
+.array-bar.large{
+    margin: 0 3px;
+}
+
 .array-values{
     display: flex;
     color: rgb(18, 18, 18);
@@ -29,6 +33,10 @@
     justify-content: center;
     left: 5px;
     bottom: -1.5rem;
+}
+.array-values.x-large{
+    display: hidden;
+    opacity: 0;
 }
 
 .array-bar.compared{

@@ -17,7 +17,7 @@ function Description(props){
                         <div className={`${category === algoData.title ? 
                                 "opacity-1":
                                 "opacity-0"
-                            }   absolute p-40 pt-8`}>
+                            }   absolute p-40 pt-8 pb-0`}>
                             <h1 className='info-heading'>
                                 {algoData.title}
                             </h1>

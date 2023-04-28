@@ -73,7 +73,7 @@ function TopBar(props){
                 <input type="range" min={1} max={5} onClick={speedHandler} defaultValue={speed} className="nav-input"></input>
 
                 <label> Array size:</label>
-                <input type="range" min={10} max={50} onClick={arrSizeHandler} defaultValue={arrSize} className="nav-input"></input>
+                <input type="range" min={6} max={50} onClick={arrSizeHandler} defaultValue={arrSize} className="nav-input"></input>
                 <span className="nav-input-value">{arrSize}</span>
 
                 <button className="nav-btn" onClick={() =>{

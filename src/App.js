@@ -12,7 +12,7 @@ import Description from "./componenets/Description";
 function App() {
 
   const[array, setArray] = useState([]);
-  const[arrSize, setArrSize] = useState(25);
+  const[arrSize, setArrSize] = useState(15);
   const[busy, setBusy] = useState(false);
   const[speed, setSpeed] = useState(3);
 
@@ -25,7 +25,7 @@ function App() {
       
       <TopBar array={array} setArray={setArray} busy={busy} setBusy={setBusy} speed={speed} setSpeed={setSpeed} arrSize={arrSize} setArrSize={setArrSize}/>
  
-      <SortingVisualizer array={array} setArray={setArray} busy={busy} setBusy={setBusy} speed={speed} setCategory={setCategory}/>
+      <SortingVisualizer array={array} setArray={setArray} busy={busy} setBusy={setBusy} speed={speed} category={category} setCategory={setCategory} arrSize={arrSize} />
 
       <Description data={data} category={category} setCategory={setCategory}/>
 

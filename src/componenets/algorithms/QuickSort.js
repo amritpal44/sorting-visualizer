@@ -12,6 +12,7 @@ function QuickSort(props){
 
     let delay_time = props.delay_time;
 
+    let category = props.category;
     let setCategory = props.setCategory;
 
 
@@ -117,7 +118,12 @@ function QuickSort(props){
 
     return(
         <div>
-            <button className="btn" onClick={() =>{
+            <button className={`btn ${category === data[5].title ? 
+                        "active" : 
+                        "deactive"
+                    }`} 
+                    
+                onClick={() =>{
                 
                 if(busy === true){
                     toast.warning("Sorting in progress. Try again after sorting gets completed.")

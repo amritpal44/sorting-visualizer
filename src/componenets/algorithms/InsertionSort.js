@@ -12,6 +12,7 @@ function InsertionSort(props){
 
     let delay_time = props.delay_time;
 
+    let category = props.category;
     let setCategory = props.setCategory;
 
     function delay(ms) {
@@ -91,20 +92,24 @@ function InsertionSort(props){
 
     return(
         <div>
-            <button className="btn" onClick={() =>{
+            <button className={`btn ${category === data[2].title ? 
+                        "active" : 
+                        "deactive"
+                    }`} 
+                onClick={() =>{
                 
-                if(busy === true){
-                    toast.warning("Sorting in progress. Try again after sorting gets completed.")
-                    return;
-                }
-                else{
-                    setBusy(true);
-                    abbHandler();
-                    insertionsort();  
-                    categoryHandler();
-                }
-                
-            }}>Insertion Sort</button>
+                    if(busy === true){
+                        toast.warning("Sorting in progress. Try again after sorting gets completed.")
+                        return;
+                    }
+                    else{
+                        setBusy(true);
+                        abbHandler();
+                        insertionsort();  
+                        categoryHandler();
+                    }
+                }}   
+            >Insertion Sort</button>
         </div>
     )
 }

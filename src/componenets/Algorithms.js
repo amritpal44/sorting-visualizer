@@ -54,11 +54,22 @@ function Algorithms(props){
 
     return(
         <div className="btn-container">
-            <BubbleSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time} setCategory={setCategory}/>
-            <InsertionSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time} setCategory={setCategory}/>
-            <SelectionSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time} setCategory={setCategory}/>
-            <MergeSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time} setCategory={setCategory}/>
-            <QuickSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time} setCategory={setCategory}/>
+            <div>
+                <BubbleSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time} category={props.category} setCategory={setCategory}/>
+            </div>
+            <div>
+                <InsertionSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time} category={props.category} setCategory={setCategory}/>
+            </div>
+            <div>
+                <SelectionSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time} category={props.category} setCategory={setCategory}/>
+            </div>
+            <div>
+                <MergeSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time} category={props.category} setCategory={setCategory}/>
+            </div>
+            <div>
+                <QuickSort array={array} setArray={setArray} busy={busy} setBusy={setBusy} delay_time={delay_time} category={props.category} setCategory={setCategory}/>
+            </div>                
+            
         </div>
     )
 }
