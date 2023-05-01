@@ -25,7 +25,7 @@ export const data = [
         description: (
             <p>
             <a
-                href="https://en.wikipedia.org/wiki/Bubble_sort"
+                href="https://www.geeksforgeeks.org/bubble-sort/"
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -59,7 +59,7 @@ export const data = [
         description: (
             <p>
             <a
-                href="https://en.wikipedia.org/wiki/Insertion_sort"
+                href="https://www.geeksforgeeks.org/insertion-sort/"
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -94,7 +94,7 @@ export const data = [
         description: (
             <p>
             <a
-                href="https://en.wikipedia.org/wiki/Selection_sort"
+                href="https://www.geeksforgeeks.org/selection-sort/"
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -136,7 +136,7 @@ export const data = [
             <div>
             <p>
                 <a
-                href="https://en.wikipedia.org/wiki/Merge_sort"
+                href="https://www.geeksforgeeks.org/merge-sort/"
                 target="_blank"
                 rel="noopener noreferrer"
                 >
@@ -188,7 +188,7 @@ export const data = [
             <div>
             <p>
                 <a
-                href="https://en.wikipedia.org/wiki/Quicksort"
+                href="https://www.geeksforgeeks.org/quick-sort/"
                 target="_blank"
                 rel="noopener noreferrer"
                 >

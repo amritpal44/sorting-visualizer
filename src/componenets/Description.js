@@ -15,9 +15,9 @@ function Description(props){
                 data.map( (algoData) =>{
                     return(
                         <div className={`${category === algoData.title ? 
-                                "opacity-1":
-                                "opacity-0"
-                            }   absolute p-40 pt-8 pb-0`}>
+                                "scale-100":
+                                "scale-0"
+                            }   absolute p-40 pt-8 pb-12`}>
                             <h1 className='info-heading'>
                                 {algoData.title}
                             </h1>

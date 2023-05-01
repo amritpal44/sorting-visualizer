@@ -2,8 +2,6 @@ import {toast} from "react-toastify";
 import {data} from "../../data";
 
 
-
-
 function BubbleSort(props){
     let array = props.array;
     let setArray = props.setArray;
