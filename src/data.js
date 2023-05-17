@@ -2,7 +2,11 @@ export const data = [
     {
         title: 'Select Algorithm',
         description:(
-            <p>You must select an algorithm before you can visualize it's execution on an array of numbers.</p>
+            <p>You must select an algorithm before you can visualize it's execution on an array of numbers.
+                <br></br><br></br>
+                <em>Note:</em> Size of array and Executioon speed cannot be changed if sorting is in progress. First select the parameters then click on "Generate New Array" button once sorting gets completed to apply changes.
+            </p>
+            
 
         ),
         worstCase: (
