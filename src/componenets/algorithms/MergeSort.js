@@ -81,7 +81,7 @@ function MergeSort(props) {
         await delay(delay_time*2);
   
         arrayBars[i].classList.remove("swapping");
-        arrayBars[i].classList.add("sorted");
+        // arrayBars[i].classList.add("sorted");
       }
     }
   

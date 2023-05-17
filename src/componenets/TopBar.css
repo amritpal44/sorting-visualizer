@@ -26,9 +26,6 @@
     padding: 2rem;
 }
 
-.nav-input{
-
-}
 
 .nav-input-value{
     transform: translateX(-8px);
@@ -39,7 +36,7 @@
     padding: 0.3rem 0.9rem;
     border: 1px solid black;
     border-radius: 3px;
-    background-color: #73eb47db;
+    background-color: #73eb47be;
 }
 
 .nav-btn.active{
