@@ -63,6 +63,14 @@ function TopBar(props){
         return Math.floor(Math.random()*(max - min + 1) + min);
     }
 
+    function handleClick(){
+        let navBtn = document.getElementsByClassName("nav-btn")[0];
+        navBtn.classList.add("active");
+        setTimeout(() => {
+            navBtn.classList.remove("active");
+        }, 144);
+    }
+
 
     return(
         <div className="nav-container">
@@ -72,8 +80,8 @@ function TopBar(props){
                 <label>Speed:</label>
                 <input type="range" min={1} max={5} onClick={speedHandler} defaultValue={speed} className="nav-input"></input>
 
-                <label> Array size:</label>
-                <input type="range" min={6} max={50} onClick={arrSizeHandler} defaultValue={arrSize} className="nav-input"></input>
+                <label className="nav-arrsize-text"> Array size:</label>
+                <input type="range" min={6} max={30} onClick={arrSizeHandler} defaultValue={arrSize} className="nav-input"></input>
                 <span className="nav-input-value">{arrSize}</span>
 
                 <button className="nav-btn" onClick={() =>{
@@ -83,7 +91,8 @@ function TopBar(props){
                     return;
                 }
                 else{
-                    resetArray();  
+                    handleClick(); 
+                    resetArray(); 
                 }
                 
             }}>Generate New Array</button>

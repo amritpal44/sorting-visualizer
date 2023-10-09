@@ -2,7 +2,11 @@ export const data = [
     {
         title: 'Select Algorithm',
         description:(
-            <p>You must select an algorithm before you can visualize it's execution on an array of numbers.</p>
+            <p>You must select an algorithm before you can visualize it's execution on an array of numbers.
+                <br></br><br></br>
+                <em>Note:</em> Size of array and Execution speed cannot be changed if sorting is in progress. First select the parameters then click on "Generate New Array" button once sorting gets completed to apply changes.
+            </p>
+            
 
         ),
         worstCase: (
@@ -28,16 +32,15 @@ export const data = [
                 href="https://www.geeksforgeeks.org/bubble-sort/"
                 target="_blank"
                 rel="noopener noreferrer"
+                
             >
-                Bubble Sort
+                <em><u><strong>Bubble Sort</strong></u></em>
             </a>{' '}
-            is a simple sorting algorithm that repeatedly steps through the
-            list, compares adjacent elements and swaps them if they are in the
-            wrong order.The pass through the list is repeated until the list
-            is sorted. The algorithm, which is a comparison sort, is named for
-            the way smaller or larger elements "bubble" to the top of the
-            list. Although the algorithm is simple, it is too slow and
-            impractical for most problems
+            is an iterative sorting algorithm that imitates the movement of bubbles in sparkling water. The bubbles represents the elements of the data structure.
+
+            <p>The bigger bubbles reach the top faster than smaller bubbles, and this algorithm works in the same way. It iterates through the data structure and for each cycle compares the current element with the next one, swapping them if they are in the wrong order.</p>
+
+            <p>It's a simple algorithm to implement, but not much efficient: on average, quadratic sorting algorithms with the same time complexity such as Selection Sort or Insertion Sort perform better.</p>
             </p>
         ),
         worstCase: (
@@ -63,16 +66,11 @@ export const data = [
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Insertion Sort
+                <em><u><strong>Insertion Sort</strong></u></em>
             </a>{' '}
-            is a simple sorting algorithm that iterates through an array and
-            at each iteration it removes one element from the array, finds the
-            location it belongs to in the sorted list and inserts it there,
-            repeating until no elements remain in the unsorted list. It is an
-            in-place, stable sorting algorithm that is inefficient on large
-            input arrays but works well for data sets that are almost sorted.
-            It is more efficient in practice compared to other quadratic
-            sorting algorithms like bubble sort and selection sort.
+            is a simple sorting algorithm that builds the final sorted array one item at a time. It's less performant than advanced sorting algorithms, but it can still have some advantages: it's really easy to implement and it's efficient on small data structures almost sorted.
+
+            <p>The algorithm divides the data structure in two sublists: a sorted one, and one still to sort. Initially, the sorted sublist is made up of just one element and it gets progressively filled. For every iteration, the algorithm picks an element on the unsorted sublist and inserts it at the right place in the sorted sublist.</p>
             </p>
         ),
         worstCase: (
@@ -98,18 +96,18 @@ export const data = [
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Selection Sort
+                <em><u><strong>Selection Sort</strong></u></em>
             </a>{' '}
             is an in-place comparison sorting algorithm that divides the input
             list into two parts: the sublist of items already sorted, which is
             built up from left to right at the front (left) of the list, and
             the sublist of items remaining to be sorted that occupy the rest
-            of the list. Initially, the sorted sublist is empty and the
+            of the list. <p>Initially, the sorted sublist is empty and the
             unsorted sublist is the entire input list. The algorithm proceeds
             by finding the smallest element in the unsorted sublist,
             exchanging (swapping) it with the leftmost unsorted element
             (putting it in sorted order), and moving the sublist boundaries
-            one element to the right.
+            one element to the right.</p>
             </p>
         ),
         worstCase: (
@@ -140,7 +138,7 @@ export const data = [
                 target="_blank"
                 rel="noopener noreferrer"
                 >
-                Merge Sort
+                <em><u><strong>Merge Sort</strong></u></em>
                 </a>{' '}
                 is an efficient, stable sorting algorith that makes use of the
                 divide and conquer strategy. Conceptually the algorithm works as
@@ -191,8 +189,10 @@ export const data = [
                 href="https://www.geeksforgeeks.org/quick-sort/"
                 target="_blank"
                 rel="noopener noreferrer"
+                
                 >
-                Quick Sort
+                <em><u><strong>Quick Sort</strong></u></em>
+                
                 </a>{' '}
                 is an efficient, in-place sorting algorith that in practice is
                 faster than MergeSort and HeapSort. However, it is not a stable

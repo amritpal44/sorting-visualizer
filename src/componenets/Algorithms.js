@@ -31,15 +31,15 @@ function Algorithms(props){
     function speedHandler(speed){
         switch(parseInt(speed))
         {
-            case 1: speed=5;
+            case 1: speed=10;
                     break;
-            case 2: speed=20;
+            case 2: speed=30;
                     break;
             case 3: speed=100;
                     break;
-            case 4: speed=1000;
+            case 4: speed=500;
                     break;
-            case 5: speed=5000;
+            case 5: speed=1000;
                     break;
             default: speed=100;
                     break;
