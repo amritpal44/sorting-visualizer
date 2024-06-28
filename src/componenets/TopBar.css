@@ -3,27 +3,28 @@
     width: 100%;
     margin: 0 auto;
     padding: 0rem 4rem;
-    background-color: rgb(145, 145, 243);
+    background-color: #0d192b;
     align-items: center;
     justify-content: space-between;
     height: 8%;
+    color: rgb(226, 226, 230);
 }
 
 .nav-heading{
     margin-left: 1rem;
     margin-right: 4rem;
     font-size: x-large;
-    font-weight: 400;
+    font-weight: bold;
 }
 
 .nav-filters{
     display: flex;
     height: 100%;
-    background-color: rgb(245, 137, 137);
     margin-right: 1rem;
     gap: 1rem;
     align-items: center;
     padding: 2rem;
+    font-size: large;
 }
 
 
@@ -35,12 +36,12 @@
     margin-left: 10px;
     padding: 0.3rem 0.9rem;
     border: 1px solid black;
-    border-radius: 3px;
-    background-color: #73eb47be;
+    border-radius: 10px;
+    background-color: #3d65ff;
 }
 
 .nav-btn.active{
-    background-color: #65c830;
+    background-color: #5374fc;
 }
 
 .nav-arrsize-text{
